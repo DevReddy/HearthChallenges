@@ -29,7 +29,7 @@ group :development, :test do
   gem 'spring'
 
   # Faker/ Factory Girl for quickly creating test data
-  # gem 'faker'
+  gem 'faker'
   # gem 'factory_girl'
 end
 
