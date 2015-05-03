@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+classes = ["all", "paladin", "priest", "warrior", "shaman", "druid", "warlock", "mage", "rogue", "hunter"]
+
+3.times do
+	Challenge.create(author: Faker::Name.first_name, text: Faker::Lorem.sentence, rel_class: classes.sample)
+end
