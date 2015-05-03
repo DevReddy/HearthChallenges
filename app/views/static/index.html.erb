@@ -11,14 +11,19 @@
 		<li role='presentation' class='active'><a href="#roll" role='tab' data-toggle='tab'>Roll</a></li>
 		<li role='presentation'><a href="#submit" role='tab' data-toggle='tab'>Submit</a></li>
 	</ul>
-	<div class='well well-lg'>
-		<div class='row'>
-			<button id='reroll' class='btn btn-danger btn-lg'>REROLL CHALLENGE</button>
+	<div class='tab-content well well-lg'>
+		<div role='tabpanel' class='tab-pane fade in active' id='roll'>
+			<div class='row'>
+				<button id='reroll' class='btn btn-danger btn-lg'>REROLL CHALLENGE</button>
+			</div>
+			<div class='row'>
+				<h3 id='challenge_body'> </h3>
+				<span class="icon-bar"></span>
+				<h4 id='challenge_author'> </h4>
+			</div>
 		</div>
-		<div class='row'>
-			<h3 id='challenge_body'> </h3>
-			<span class="icon-bar"></span>
-			<h4 id='challenge_author'> </h4>
+		<div role='tabpanel' class='tab-pane fade' id='submit'>
+			<%= render 'sessions/login' %>
 		</div>
 	</div>
 </div>
