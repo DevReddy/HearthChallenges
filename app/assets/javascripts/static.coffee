@@ -2,7 +2,7 @@ retrieveChallenge = () ->
 	$.ajax
 		url: '/challenges/all'
 		error: (jqXHR, textStatus, errorThrown) ->
-			console.log('AJAX error: #{textStatus}')
+			console.log('AJAX error: ' + textStatus)
 		success: (data) ->
 			index = Math.floor(Math.random() * data.length)
 			$('#challenge_body').html data[index].text
