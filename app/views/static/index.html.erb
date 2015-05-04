@@ -3,6 +3,9 @@
 		<div class='navbar-header'>
 			<a href="#" class='navbar-brand'>HearthChallenges</a>
 		</div>
+		<% if session['username'] %>
+			<p class='navbar-text navbar-right'>Hello, /u/<%=session['username']%> - <a href="/logout" class='navbar-link'>Logout</a></p>
+		<% end %>
 	</div>
 </div>
 
