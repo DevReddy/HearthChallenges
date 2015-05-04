@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def login
   	session['state'] = Faker::Internet.password
-  	puts 'MADE IT TO LOGIN ROUTE'
   	redirect_to "https://www.reddit.com/api/v1/authorize?client_id=#{ENV['CLIENT_ID']}&response_type=code&state=#{session['state']}&redirect_uri=https://hearth-challenges-staging.herokuapp.com/auth/reddit&duration=temporary&scope=identity"
   end
 
