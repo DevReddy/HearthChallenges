@@ -3,9 +3,9 @@
 one:
   author: MyString
   text: MyText
-  classes: 
+  rel_class: MyString
 
 two:
   author: MyString
   text: MyText
-  classes: 
+  rel_class: MyString
