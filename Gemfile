@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'faker'
 gem 'httparty'
 
 # Use Unicorn as the app server
@@ -30,8 +31,7 @@ group :development, :test do
 
   gem 'spring'
 
-  # Faker/ Factory Girl for quickly creating test data
-  gem 'faker'
+  # Factory Girl for quickly creating test data
   # gem 'factory_girl'
 end
 
