@@ -10,16 +10,16 @@ class SessionsController < ApplicationController
   		redirect_to '/'
   	else
   		if params['state'] === session['state']
-  			# response = HTTParty.post("https://www.reddit.com/api/v1/access_token",
-  			# 	{:basic_auth => {
-  			# 		:username => ENV['CLIENT_ID'],
-  			# 		:password => ENV['CLIENT_SECRET']
-  			# 		}},
-  			# 	{:body => {
-  			# 		:grant_type => "authorization_code",
-  			# 		:code => params['code'],
-  			# 		:redirect_uri => "https://hearth-challenges-staging.herokuapp.com/auth/reddit"
-  			# 		}})
+  			response = HTTParty.post("https://www.reddit.com/api/v1/access_token",
+  				{:basic_auth => {
+  					:username => ENV['CLIENT_ID'],
+  					:password => ENV['CLIENT_SECRET']
+  					},
+  				:body => {
+  					:grant_type => "authorization_code",
+  					:code => params['code'],
+  					:redirect_uri => "https://hearth-challenges-staging.herokuapp.com/auth/reddit"
+  					}})
   			# reset_session
   			# session['username'] = HTTParty.get('https://oauth.reddit.com/api/v1/me',
   			# 	:headers => {
