@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def auth
   	if params['error']
-  		session['error'] = params['error']
+  		flash['error'] = params['error']
   		redirect_to '/'
   	else
   		if params['state'] === session['state']
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   			session['username'] = user_response['name']
   			redirect_to '/'
   		else
-  			session['error'] = 'Returned state does not match.'
+  			flash['error'] = 'Returned state does not match.'
   			redirect_to '/'
   		end
   	end
