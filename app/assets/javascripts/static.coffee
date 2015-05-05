@@ -14,7 +14,7 @@ retrieveChallenge = () ->
 			$('#challenge_body').html text
 			$('#challenge_author').html author
 
-$ ->
+$(window).load ->
 	retrieveChallenge()
 
 	$('#reroll').click ->
