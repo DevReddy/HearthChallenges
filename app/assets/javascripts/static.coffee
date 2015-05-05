@@ -16,7 +16,7 @@ retrieveChallenge = ->
 	activeClasses = filterChallenges()
 	data = JSON.stringify(activeClasses)
 	$.ajax
-		url: '/challenges/all'
+		url: '/challenges/read'
 		data: {classes: data}
 		error: (jqXHR, textStatus, errorThrown) ->
 			console.log('AJAX error: ' + textStatus)

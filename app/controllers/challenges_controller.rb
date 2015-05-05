@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  def all
+  def read
   	respond_to do |format|
   		format.json {
         classes = JSON.parse(params['classes'])

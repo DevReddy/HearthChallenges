@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'auth/reddit' => 'sessions#auth'
   get 'logout' => 'sessions#logout'
 
-  get 'challenges/all'
+  get 'challenges/read'
   post 'challenges/create'
 end
