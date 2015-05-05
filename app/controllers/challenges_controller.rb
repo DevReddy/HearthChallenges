@@ -1,7 +1,23 @@
 class ChallengesController < ApplicationController
   def all
   	respond_to do |format|
-  		format.json {render json: Challenge.all}
+  		format.json {
+        classes = JSON.parse(params['classes'])
+        if classes == ["All Classes"]
+          render json: Challenge.all
+        else
+          challenges = []
+          Challenge.where(rel_class: 'All Classes').each do |challenge|
+            challenges << challenge
+          end
+          classes.each do |rel_class|
+            Challenge.where(rel_class: rel_class).each do |challenge|
+              challenges << challenge
+            end
+          end
+          render json: challenges
+        end
+      }
   	end
   end
 

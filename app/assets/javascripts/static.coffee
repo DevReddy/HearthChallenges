@@ -1,3 +1,11 @@
+filterChallenges = ->
+	activeClasses = []
+	activeInputs = $('.btn.active > input')
+	$.each activeInputs, ->
+		activeClasses.push this.value
+	console.log(activeClasses)
+	return activeClasses
+
 filterChecks = ->
 	$('.rel_class').click ->
 		$('#all_classes').removeClass 'active'
@@ -5,8 +13,11 @@ filterChecks = ->
 		$('.rel_class').removeClass 'active'
 
 retrieveChallenge = ->
+	activeClasses = filterChallenges()
+	data = JSON.stringify(activeClasses)
 	$.ajax
 		url: '/challenges/all'
+		data: {classes: data}
 		error: (jqXHR, textStatus, errorThrown) ->
 			console.log('AJAX error: ' + textStatus)
 		success: (data) ->
