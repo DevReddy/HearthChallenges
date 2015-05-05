@@ -21,8 +21,9 @@ class SessionsController < ApplicationController
   					:redirect_uri => "https://hearth-challenges-staging.herokuapp.com/auth/reddit"
   					}})
   			reset_session
-  			session['username'] = HTTParty.get('https://oauth.reddit.com/api/v1/me',
-  				headers: {"Authorization" => "bearer #{response[:access_token]}"})
+  			session['error'] = response[:access_token]
+  			# session['username'] = HTTParty.get('https://oauth.reddit.com/api/v1/me',
+  			# 	headers: {"Authorization" => "bearer #{response[:access_token]}"})
   			redirect_to '/'
   		else
   			session['error'] = 'Returned state does not match.'
