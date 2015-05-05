@@ -25,5 +25,5 @@ setListener = ->
 
 
 $ ->
-	setListeners()
+	setListener()
 	$(document).on('page:load', setListener)
