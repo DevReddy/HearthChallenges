@@ -6,7 +6,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
-  	challenge = Challenge.new(author: "/u/#{session['username']}", text: params['text'], rel_class: params['rel_class'])
+  	challenge = Challenge.new(author: session['username'], text: params['text'], rel_class: params['rel_class'])
   	flash['error'] = challenge.errors if !challenge.save
 
   	redirect_to '/'
