@@ -20,14 +20,7 @@
 	</ul>
 	<div class='tab-content well well-lg'>
 		<div role='tabpanel' class='tab-pane fade in active' id='roll'>
-			<div class='row'>
-				<button id='reroll' class='btn btn-danger btn-lg'>REROLL CHALLENGE</button>
-			</div>
-			<div class='row'>
-				<h3 id='challenge_body'></h3>
-				<h5 id='challenge_class'></h5>
-				<h4 id='challenge_author'></h4>
-			</div>
+			<%= render 'challenges/show' %>
 		</div>
 		<div role='tabpanel' class='tab-pane fade' id='submit'>
 			<%= render 'sessions/login' if !session['username'] %>

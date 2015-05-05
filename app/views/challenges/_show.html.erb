@@ -1,0 +1,27 @@
+<% class_rows = [['Druid', 'Hunter', 'Mage'], ['Paladin', 'Priest', 'Rogue'], ['Shaman', 'Warlock', 'Warrior']] %>
+
+
+
+<div class='row'>
+	<button id='reroll' class='btn btn-danger btn-lg'>REROLL CHALLENGE</button>
+</div>
+
+<div class='row'>
+	<h5 id='challenge_class'></h5>
+	<h3 id='challenge_body'></h3>
+	<h4 id='challenge_author'></h4>
+</div>
+
+<p>Filter results:</p>
+
+<div class='row' data-toggle='buttons'>
+	<label class='btn btn-default active' id='all_classes' ><input type='checkbox' value='All Classes'>All Classes</label>
+</div>
+
+<% class_rows.each do |row| %>
+	<div class='row' data-toggle='buttons'>
+		<% row.each do |hero| %>
+			<label class='btn btn-default rel_class'><input type='checkbox' value=<%= hero %>><%= hero %></label>
+		<% end %>
+	</div>
+<% end %>
