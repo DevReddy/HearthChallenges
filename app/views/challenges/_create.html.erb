@@ -1,0 +1,21 @@
+<div class='form-group'>
+	<%= form_tag ('/challenges/create'), :id => 'challenge_form' do %>
+		<%= label_tag(:challenge, "Challenge text:") %>
+		<%= text_field_tag(:text) %>
+		<%= submit_tag("Submit") %>
+	<% end %>
+
+	<select class='form-control' form='challenge_form' name='rel_class'>
+		<option value='' disabled selected>Select Class</option>
+		<option value='All Classes'>All Classes</option>
+		<option value='Druid'>Druid</option>
+		<option value='Hunter'>Hunter</option>
+		<option value='Mage'>Mage</option>
+		<option value='Paladin'>Paladin</option>
+		<option value='Priest'>Priest</option>
+		<option value='Rogue'>Rogue</option>
+		<option value='Shaman'>Shaman</option>
+		<option value='Warlock'>Warlock</option>
+		<option value='Warrior'>Warrior</option>
+	</select>
+</div>
