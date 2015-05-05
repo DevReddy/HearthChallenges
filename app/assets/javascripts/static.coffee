@@ -1,3 +1,9 @@
+filterChecks = ->
+	$('.rel_class').click ->
+		$('#all_classes').removeClass 'active'
+	$('#all_classes').click ->
+		$('.rel_class').removeClass 'active'
+
 retrieveChallenge = ->
 	$.ajax
 		url: '/challenges/all'
@@ -18,6 +24,7 @@ retrieveChallenge = ->
 			$('#challenge_author').html author
 
 setListener = ->
+	filterChecks()
 	retrieveChallenge()
 	$('#reroll').click ->
 		retrieveChallenge()
