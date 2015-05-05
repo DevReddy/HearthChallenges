@@ -17,7 +17,7 @@
 
 
 <div class='row'>
-	<div class='col-xs-4 col-xs-offset-4' data-toggle='buttons'>
+	<div class='col-sm-4 col-sm-offset-4' data-toggle='buttons'>
 		<label class='btn btn-default active btn-block' id='all_classes' ><input type='checkbox' value='All Classes'>All Classes</label>
 	</div>
 </div>
@@ -25,7 +25,7 @@
 <% class_rows.each do |row| %>
 	<div class='row'>
 		<% row.each do |hero| %>
-			<div class='col-xs-4' data-toggle='buttons'>
+			<div class='col-sm-4' data-toggle='buttons'>
 				<label class='btn btn-default btn-block rel_class'><input type='checkbox' value=<%= hero %>><%= hero %></label>
 			</div>
 		<% end %>
