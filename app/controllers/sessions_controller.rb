@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   		redirect_to '/'
   	else
   		if params['state'] === session['state']
-  			response = HTTParty.post("https://www.reddit.com/api/v1/access_token",
+  			token_response = HTTParty.post("https://www.reddit.com/api/v1/access_token",
   				{:basic_auth => {
   					:username => ENV['CLIENT_ID'],
   					:password => ENV['CLIENT_SECRET']
@@ -21,8 +21,12 @@ class SessionsController < ApplicationController
   					:redirect_uri => "https://hearth-challenges-staging.herokuapp.com/auth/reddit"
   					}})
   			reset_session
-  			session['username'] = HTTParty.get('https://oauth.reddit.com/api/v1/me',
-  				headers: {"Authorization" => "bearer #{response['access_token']}"})
+  			user_response = HTTParty.get('https://oauth.reddit.com/api/v1/me',
+  				headers: {
+  					"Authorization" => "bearer #{token_response['access_token']}",
+  					"User-Agent" => "pc:HearthChallenges.herokuapp.com:v1.0.0 (by /u/bobogyarados)"
+  					})
+  			session['username'] = user_response
   			redirect_to '/'
   		else
   			session['error'] = 'Returned state does not match.'
