@@ -22,9 +22,7 @@ class SessionsController < ApplicationController
   					}})
   			reset_session
   			session['username'] = HTTParty.get('https://oauth.reddit.com/api/v1/me',
-  				headers: {
-  					"Authorization" => "bearer #{response[:access_token]}"
-  					})
+  				headers: {"Authorization" => "bearer #{response[:access_token]}"})
   			redirect_to '/'
   		else
   			session['error'] = 'Returned state does not match.'
