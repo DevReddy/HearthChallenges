@@ -1,1 +1,6 @@
-<%= link_to "LOGIN WITH REDDIT", '/login/reddit', :method => :get, class: "btn btn-primary btn-lg" %>
+<div class='hidden-xs'>
+	<%= link_to "LOGIN WITH REDDIT", '/login/reddit', :method => :get, class: "btn btn-primary btn-lg" %>
+</div>
+<div class='visible-xs'>
+	<%= link_to "LOGIN WITH REDDIT", '/login/reddit?mobile=true', :method => :get, class: "btn btn-primary btn-lg" %>
+</div>

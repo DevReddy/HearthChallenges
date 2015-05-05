@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def login
-  	redirect_to "https://www.reddit.com/api/v1/authorize?client_id=#{ENV['CLIENT_ID']}&response_type=code&state=#{session['state']}&redirect_uri=#{ENV['REDIRECT_URI']}&duration=temporary&scope=identity"
+    compact = params['mobile'] ? '.compact' : ''
+  	redirect_to "https://www.reddit.com/api/v1/authorize#{compact}?client_id=#{ENV['CLIENT_ID']}&response_type=code&state=#{session['state']}&redirect_uri=#{ENV['REDIRECT_URI']}&duration=temporary&scope=identity"
   end
 
   def auth
