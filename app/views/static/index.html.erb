@@ -30,7 +30,8 @@
 			</div>
 		</div>
 		<div role='tabpanel' class='tab-pane fade' id='submit'>
-			<%= render 'sessions/login' %>
+			<%= render 'sessions/login' if !session['username'] %>
+			<%= render 'challenges/create' if session['username'] %>
 		</div>
 	</div>
 </div>

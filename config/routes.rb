@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#logout'
 
   get 'challenges/all'
+  post 'challenges/create'
 
 end
