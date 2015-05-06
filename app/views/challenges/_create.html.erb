@@ -1,7 +1,9 @@
 <div class='form-group'>
 	<%= form_tag ('/challenges/create'), :id => 'challenge_form' do %>
 		<%= label_tag(:challenge, "Challenge text:") %>
-		<%= text_area(:challenge, :text, size:'20x30') %>
+		<br/>
+		<%= text_area(:challenge, :text, size:'30x10') %>
+		<br/>
 		<%= submit_tag("Submit") %>
 	<% end %>
 
