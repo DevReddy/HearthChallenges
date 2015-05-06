@@ -26,8 +26,11 @@ class SessionsController < ApplicationController
   					"Authorization" => "bearer #{token_response['access_token']}",
   					"User-Agent" => "pc:HearthChallenges.herokuapp.com:v1.0.0 (by /u/bobogyarados)"
   					})
-        flash['error'] = user_response
-  			session['username'] = user_response['name']
+        if user_response['has_verified_email']
+          session['username'] = user_response['name']
+        else
+          flash['error'] = "You haven't verified your email! No spamerino allowed, sorry :("
+        end
   			redirect_to '/'
   		else
   			flash['error'] = 'Returned state does not match.'
