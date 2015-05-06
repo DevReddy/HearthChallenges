@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   					"Authorization" => "bearer #{token_response['access_token']}",
   					"User-Agent" => "pc:HearthChallenges.herokuapp.com:v1.0.0 (by /u/bobogyarados)"
   					})
-        p user_response
+        flash['error'] = user_response
   			session['username'] = user_response['name']
   			redirect_to '/'
   		else
