@@ -6,7 +6,12 @@
 		<% if session['username'] %>
 			<p class='navbar-text navbar-right'>Hello, /u/<%=session['username']%> - <a href="/logout" class='navbar-link'>Logout</a></p>
 		<% else %>
-			<p class='navbar-text navbar-right'><a href="/login/reddit" class='navbar-link'>Login with Reddit</a></p>
+			<p class='navbar-text navbar-right hidden-xs'>
+				<a href="/login/reddit" class='navbar-link'>Login with Reddit</a>
+			</p>
+			<p class='navbar-text navbar-right visible-xs'>
+				<a href="/login/reddit?mobile=true" class='navbar-link'>Login with Reddit</a>
+			</p>
 		<% end %>
 	</div>
 </div>
