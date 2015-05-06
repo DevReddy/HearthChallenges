@@ -3,9 +3,7 @@ class ChallengesController < ApplicationController
   	respond_to do |format|
   		format.json {
         classes = JSON.parse(params['classes'])
-        if !classes
-          render json: []
-        elsif classes == ["All Classes"]
+        if classes == ["All Classes"]
           render json: Challenge.all
         else
           challenges = []

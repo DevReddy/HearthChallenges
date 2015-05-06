@@ -19,7 +19,7 @@ retrieveChallenge = ->
 		url: '/challenges/read'
 		data: {classes: data}
 		error: (jqXHR, textStatus, errorThrown) ->
-			console.log('AJAX error: ' + textStatus)
+			console.log('AJAX error: ' + errorThrown)
 		success: (data) ->
 			index = Math.floor(Math.random() * data.length)
 			if data[index]
