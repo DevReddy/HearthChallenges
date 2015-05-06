@@ -3,7 +3,6 @@ filterChallenges = ->
 	activeInputs = $('.btn.active > input')
 	$.each activeInputs, ->
 		activeClasses.push this.value
-	console.log(activeClasses)
 	return activeClasses
 
 filterChecks = ->
