@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
         if user_response['has_verified_email']
           session['username'] = user_response['name']
         else
-          flash['error'] = "You haven't verified your email! No spamerino allowed, sorry :("
+          flash['error'] = "Verify your Reddit email first! I'm trying to cut back on spamerino, sorry :("
         end
   			redirect_to '/'
   		else
